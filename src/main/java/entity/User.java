@@ -1,5 +1,7 @@
 package entity;
 
+import dao.DAOLogin;
+
 public class User {
     private String lastName;
     private String firstName;
@@ -60,6 +62,10 @@ public class User {
         this.password = password;
     }
 
+    public String getFullName() {
+        return getFirstName() +" "+ getLastName();
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -69,5 +75,11 @@ public class User {
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 '}';
+    }
+
+    public static void main(String[] args) {
+        User user = new User("cci@gmail.com", "123123");
+        DAOLogin daoLogin = new DAOLogin();
+        System.out.println(user.getFullName());
     }
 }

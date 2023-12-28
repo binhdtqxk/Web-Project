@@ -87,7 +87,7 @@
 
                                     <div class="product-card">
                                         <div class="product-card__inner">
-                                            <a class="product-urls" href="/lf08" title="MERLE LOAFERS - LF08">
+                                            <a class="product-urls" href="Product.jsp" title="MERLE LOAFERS - LF08">
 
                                                 <div class="product-card__image">
 

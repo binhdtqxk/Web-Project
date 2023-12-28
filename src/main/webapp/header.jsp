@@ -43,7 +43,7 @@
                                 <!-- Hiển thị thông tin người dùng nếu đã đăng nhập -->
                                 <ul class="sub-nav-account">
                                     <li>
-                                        <a href="">Xin chào ${auth.lastName}</a>
+                                        <a href="profile.jsp">Xin chào ${auth.lastName}</a>
                                     </li>
                                     <li>
                                         <a href="signOut" class="sign_out">Đăng xuất</a>

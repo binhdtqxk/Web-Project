@@ -114,7 +114,12 @@ a {
     margin-left: auto;
     font-family: 'SVN-Gotham';
 
+}
 
+#login .error {
+    text-align: center;
+    color: red;
+    font-size: 18px; 
 }
 
 .margin-bottom-30 {

@@ -29,7 +29,7 @@ public class RegisterServlet extends HttpServlet {
         String phone=req.getParameter("phone");
         String email=req.getParameter("email");
         String password=req.getParameter("password");
-        User user= new User(lastName,firstName,phone,email,password);
+        User user= new User(lastName,firstName,phone,email,service.EnCode.toSHA1(password));
 
         dao.addAccount(user);
     }

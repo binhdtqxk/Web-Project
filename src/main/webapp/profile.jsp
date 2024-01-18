@@ -60,12 +60,8 @@
 
                     <li class="userHelper-nav-item userHelper-nav-search"><a href=""> <i class="ti-search"></i>
                     </a></li>
-
                 </ul>
-
             </div>
-
-
         </div>
     </div>
     <!-- End top header -->

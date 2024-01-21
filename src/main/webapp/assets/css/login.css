@@ -205,6 +205,9 @@ a {
 .form-signup .forgot-pass {
     margin-top: 10px;
 }
+.form-signup .text-center {
+    margin-top: 10px;
+}
 .form-signup .text-center .btn-link-style {
     font-weight: 600;
     color: #916841;

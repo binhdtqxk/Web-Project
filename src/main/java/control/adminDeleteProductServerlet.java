@@ -26,11 +26,11 @@ public class adminDeleteProductServerlet extends HttpServlet {
 
         String idShoe = req.getParameter("idShoe");
 
-        String success = "Add success";
+        String deleteSuccess = "delete success";
         int count = dao.deleteProduct(idShoe);
         if (count > 0) {
-            req.setAttribute("success", success);
-            System.out.println("Success attribute set: " + success); // Log để kiểm tra
+            req.setAttribute("deleteSuccess", deleteSuccess);
+            System.out.println("Success attribute set: " + deleteSuccess); // Log để kiểm tra
             req.getRequestDispatcher("adminProduct.jsp").forward(req, resp);
         } else {
             System.out.println("Delete product failed."); // Log để kiểm tra

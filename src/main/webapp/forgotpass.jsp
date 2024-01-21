@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="assets/icon/themify-icons/themify-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
 
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
@@ -20,10 +20,9 @@
 </head>
 
 <body>
-<c:import url="header.jsp"
+<c:import url="header.jsp"/>
 
 <!-- Map web -->
-
 <div class="map">
     <ul class="sub-map">
         <li><a href="index.jsp" title="Trang chủ" class="home">Trang chủ > </a></li>
@@ -37,7 +36,7 @@
 <div id="login">
     <div class="text-center margin-bottom-30">
         <h1 class="title-head">Đặt lại mật khẩu</h1>
-        <p class="subtitle">Bạn quên mật khẩu? Nhập địa chỉ email để lấy lại mật khẩu qua email.</p>
+        <h5 class="subtitle">Bạn quên mật khẩu? Nhập địa chỉ email để lấy lại mật khẩu qua email.</h5>
     </div>
 
     <form method="post" action="login" id="customer_login" accept-charset="UTF-8"
@@ -59,7 +58,7 @@
 
             <div class="text-login text-center">
                 <p>
-                    Quay lại <a href="/account/register" title="Đăng ký">tại đây.</a>
+                    Quay lại <a href="login.jsp" title="Đăng ký">tại đây.</a>
                 </p>
             </div>
         </div>

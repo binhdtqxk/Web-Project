@@ -129,7 +129,7 @@
                    id="priceShoe" required="">
 
             <label for="idShoe">Mã giày<span class="required">*</span></label>
-            <input placeholder="Nhập mã giày" type="text"
+            <input placeholder="Mã giày duoc nhap tu dong" type="text"
                    class="form-control" value="" name="idShoe" id="idShoe">
 
             <div class="btn">
@@ -189,7 +189,31 @@
 
     </div>
 </div>
-
+<c:set var="deleteSuccess" value="${requestScope.deleteSuccess}"/>
+<c:if test="${deleteSuccess != null}">
+    <div class="noti-add js-noti-add">
+        <div class="noti-add-container">
+            <a href="deleteSuccess" class="noti-add-close js-noti-add-close">
+                <i class="fa-solid fa-xmark"></i>
+            </a>
+            <header class="noti-add-header">
+                Thông báo
+            </header>
+            <div class="noti-body">
+                <p>
+                    Đã xoa sản phẩm thành công!
+                </p>
+            </div>
+            <div class="noti-btn">
+                <a href="deleteSuccess">
+                    <button type="submit" value="ok" class="noti-add-button">
+                        OK
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+</c:if>
 <script>
     // them san pham.....................---------------------------
     const addBtn = document.querySelector('.js-add')

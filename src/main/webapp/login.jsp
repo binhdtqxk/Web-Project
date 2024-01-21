@@ -25,7 +25,7 @@
 
 <div class="map">
   <ul class="sub-map">
-    <li><a href="" title="Trang chủ" class="home">Trang chủ > </a></li>
+    <li><a href="index.jsp" title="Trang chủ" class="home">Trang chủ > </a></li>
     <li>
       <p class="cur-position">Đăng nhập tài khoản</p>
     </li>

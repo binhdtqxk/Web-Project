@@ -13,6 +13,14 @@ public class Product {
 		this.idOfShoe = idOfShoe;
 		this.priceOfShoe = priceOfShoe;
 	}
+
+	public Product(String imgOfShoe, String typeOfShoe, String nameOfShoe, int priceOfShoe) {
+		this.imgOfShoe = imgOfShoe;
+		this.typeOfShoe = typeOfShoe;
+		this.nameOfShoe = nameOfShoe;
+		this.priceOfShoe = priceOfShoe;
+	}
+
 	public Product() {
 		// TODO Auto-generated constructor stub
 	}

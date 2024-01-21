@@ -27,7 +27,7 @@ public class loginServlet extends HttpServlet {
         String username = req.getParameter("email");
         String password = req.getParameter("password");
         DAOLogin daoLogin = new DAOLogin();
-        User user = daoLogin.checkUser(username, password);
+        User user = daoLogin.checkUser(username, service.EnCode.toSHA1(password));
         if (user != null) {
             HttpSession session = req.getSession();
             session.setAttribute("auth", user);

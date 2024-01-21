@@ -603,6 +603,7 @@
                                             </div>
                                         </form>
                                     </div>
+                                    </div>
                                 </div>
                                 <div class="owl-item active" style="width: 280px; margin-right: 10px;">
                                     <div class="product-card"><span class="sale-box">- 20% </span>

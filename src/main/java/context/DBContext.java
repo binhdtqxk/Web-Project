@@ -9,8 +9,8 @@ public class DBContext {
 	private final String dbName = "beclassy";
 	private final String portNumber = "3306";
 	private final String instance = "";
-	private final String userID = "sa";
-	private final String password = "admin";
+	private final String userID = "root";
+	private final String password = "";
 
 	public Connection getConnection() throws ClassNotFoundException, SQLException {
 		String url = "jdbc:mysql://" + serverName + ":" + portNumber + "\\" + instance + "/" + dbName;

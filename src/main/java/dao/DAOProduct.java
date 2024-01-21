@@ -147,6 +147,41 @@ public class DAOProduct {
         conn.close();
         return result;
     }
+    public int addProduct(Product product) {
+        String query = "Insert into product(ImgOfShoe, TypeOfShoe, NameOfShoe, PriceOfShoe) values (?,?,?,?)";
+        int rs = 0;
+        try {
+            conn = new DBContext().getConnection();
+            System.out.println(conn);
+            ps = conn.prepareStatement(query);
+            ps.setString(1, product.getImgOfShoe());
+            ps.setString(2, product.getTypeOfShoe());
+            ps.setString(3, product.getNameOfShoe());
+            ps.setInt(4, product.getPriceOfShoe());
+
+            rs = ps.executeUpdate();
+            conn.close();
+        } catch (ClassNotFoundException | SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return rs;
+    }
+
+    public int deleteProduct(String idShoe) {
+        String query = "delete from product where IDOfShoe = ?";
+        int rs = 0;
+        try {
+            conn = new DBContext().getConnection();
+            System.out.println(conn);
+            ps = conn.prepareStatement(query);
+            ps.setString(1, idShoe);
+            rs = ps.executeUpdate();
+            conn.close();
+        } catch (ClassNotFoundException | SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return rs;
+    }
 
     public static void main(String[] args) throws SQLException {
         DAOProduct d = new DAOProduct();

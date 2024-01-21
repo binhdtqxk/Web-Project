@@ -5,7 +5,7 @@
 <html>
 
 <head>
-  <link rel="stylesheet" type="text/css" href="assets/css/login.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/resetpass.css">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/icon/themify-icons/themify-icons.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,7 +36,7 @@
 <!-- Login -->
 <div id="login">
   <div class="text-center margin-bottom-30">
-    <h1 class="title-head">Đăng nhập tài khoản</h1>
+    <h1 class="title-head">Dat lai mat khau</h1>
   </div>
 
   <form method="post" action="login" id="customer_login" accept-charset="UTF-8"
@@ -52,22 +52,27 @@
              data-validation-error-msg="Email sai định dạng">
 
 
-      <label for="pw-login">Mật khẩu<span class="required">*</span></label>
-      <input autocomplete="off" placeholder="Nhập Mật khẩu" type="password" id="pw-login"
-             class="form-control" value="" name="password"
+      <label for="pw-old">Mật khẩu cu<span class="required">*</span></label>
+      <input autocomplete="off" placeholder="Nhập Mật khẩu Cu" type="password" id="pw-old"
+             class="form-control" value="" name="passwordOld"
+             data-validation-error-msg="Không được để trống" data-validation="required">
+
+      <label for="pw-new">Mật khẩu moi<span class="required">*</span></label>
+      <input autocomplete="off" placeholder="Nhập Mật khẩu Cu" type="password" id="pw-new"
+             class="form-control" value="" name="passwordOld"
              data-validation-error-msg="Không được để trống" data-validation="required">
 
       <div class="pull-xs-left text-center" style="margin-top: 15px;">
-        <button class="btn btn-style btn-blues" type="submit" value="Đăng nhập">Đăng nhập</button>
+        <button class="btn btn-style btn-blues" type="submit" value="Doi mat khau">Dat lai mat khau</button>
       </div>
       <div class="clearfix"></div>
       <p class="text-center">
-        <a href="#recover" class="btn-link-style" onclick="showRecoverPasswordForm();"
+        <a href="forgotpass.jsp" class="btn-link-style" onclick="showRecoverPasswordForm();"
            title="Quên mật khẩu?">Quên mật khẩu?</a>
       </p>
       <div class="text-login text-center">
         <p>
-          Bạn chưa có tài khoản. Đăng ký <a href="/account/register" title="Đăng ký">tại đây.</a>
+          Quay lai <a href="index.jsp" title="Trang chu">tại đây.</a>
         </p>
       </div>
     </div>

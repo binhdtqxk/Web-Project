@@ -47,7 +47,7 @@ a {
 }
 
 /*.center-block {*/
-/*    max-height: 85px;*/
+
 /*    display: block;*/
 /*    margin-left: auto;*/
 /*    margin-right: auto;*/
@@ -114,7 +114,12 @@ a {
     margin-left: auto;
     font-family: 'SVN-Gotham';
 
+}
 
+#login .error {
+    text-align: center;
+    color: red;
+    font-size: 18px;
 }
 
 .margin-bottom-30 {
@@ -122,30 +127,25 @@ a {
 
 }
 
-#login .title-head {
+.text-center {
+    text-align: center;
+}
+
+#login .title-head,
+#customer-reset-password .title-head,
+#recover-password .title-head {
     font-size: 26px;
     line-height: 28px;
     margin: 0;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 2.4px;
+}
+
+.title-head {
+    font-size: 26px;
     color: #333;
-    margin-top: 10px;
-    text-align: center;
-}
-
-#login .subtitle {
-    font-size: 10px;
-    letter-spacing: 2.4px;
-    font-family: 'SVN-Gotham';
-    font-weight: 200;
-    margin-top: 10px;
-}
-
-#login .text-center {
-    margin-top: 10px;
-    margin-bottom: 30px;
-    text-align: center;
+    text-decoration: none;
 }
 
 .form-signup label {
@@ -180,8 +180,8 @@ a {
     box-shadow: none;
 }
 
-#login .col-md-12 .btn-style {
-    width: 300px;
+.form-signup .pull-xs-left .btn {
+    width: 270px;
     height: 50px;
     font-size: 13px;
     color: #fff;
@@ -194,22 +194,35 @@ a {
     transition: all ease 0.3s;
 
 }
-#login .col-md-12 .btn-style:hover {
+
+.form-signup .pull-xs-left .btn:hover {
     color:#000000;
     background-color: #fff;
     cursor: pointer;
 
 }
-#login .col-md-12 a {
-    display: block;
-    margin-top: 15px;
+
+.form-signup .forgot-pass {
+    margin-top: 10px;
+}
+.form-signup .text-center {
+    margin-top: 10px;
+}
+.form-signup .text-center .btn-link-style {
+    font-weight: 600;
+    color: #916841;
+    font-size: 14px;
+}
+
+.form-signup .text-login {
     text-transform: uppercase;
     font-size: 12px;
     letter-spacing: 1.5px;
-    color: #916841;
     font-weight: 550;
+
 }
 
-#login .col-md-12 a:hover {
-    color: #000000;
+.form-signup .text-login a {
+    color: #916841;
+
 }

@@ -1,3 +1,19 @@
+
+@font-face {
+    font-family: 'SVN-Gotham';
+    src: url('../font/font-SVN/SVN-Gotham Light.otf') format('opentype');
+    font-weight: 200;
+}
+@font-face {
+    font-family: 'SVN-Gotham';
+    src: url('../font/font-SVN/SVN-Gotham Book.otf') format('opentype');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('../font/font-poppins/Poppins-Bold.otf') format('opentype');
+    font-weight: 700;
+}
 @font-face {
     font-family: 'Poppins';
     src: url('../font/font-poppins/Poppins-Bold.otf') format('opentype');
@@ -27,7 +43,7 @@
     box-sizing: border-box;
 }
 body{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'SVN-Gotham';
     margin: 0;
     line-height: 1.7;
     font-weight: 300;

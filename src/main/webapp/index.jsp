@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false"%>
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -16,7 +17,9 @@
     <title>BeClassy</title>
 </head>
 <body>
+<jsp:useBean id="listP" class="dao.DAOProduct" scope="session">
 
+</jsp:useBean>
 <c:import url="header.jsp"/>
 
 <div class="section-1">
@@ -52,128 +55,40 @@
 
                             <div class="owl-stage" style="width: 100%;">
 
-                                <div class="owl-item active" style="width: 25%; padding-right: 10px;">
+                                <c:forEach var="i" items="${listP.firstFourPr}">
+                                    <div class="owl-item active" style="width: 25%; padding-right: 10px;">
 
-                                    <div class="product-card">
-                                        <div class="product-card__inner">
-                                            <a class="product-urls" href="" title="SIR CLASSIC OXFORD - OF34">
+                                        <div class="product-card">
+                                            <div class="product-card__inner">
+                                                <form action=""></form>
+                                                <a class="product-urls" href="clickOnPr?id=${i.idOfShoe}" title="SIR CLASSIC OXFORD - OF34">
 
-                                                <div class="product-card__image">
+                                                    <div class="product-card__image">
 
-                                                    <img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf2434.jpg?v=1699335369040"
-                                                         data-lazyload="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf2434.jpg?v=1699335369040"
-                                                         class="product-card-image-front img-responsive center-block"
-                                                         alt="SIR CLASSIC OXFORD - OF34">
+                                                        <img src="${i.imgOfShoe}"
+                                                             data-lazyload="${i.imgOfShoe}"
+                                                             class="product-card-image-front img-responsive center-block"
+                                                             alt="${i.nameOfShoe} ${i.typeOfShoe} - ${i.idOfShoe}">
 
-                                                </div>
+                                                    </div>
 
-                                            </a>
+                                                </a>
 
-                                            <h4 class="product-single__series">OXFORD</h4>
+                                                <h4 class="product-single__series">${i.typeOfShoe}</h4>
 
-                                            <h3 class="product-card__title">SIR CLASSIC OXFORD - OF34</h3>
+                                                <h3 class="product-card__title">${i.nameOfShoe} ${i.typeOfShoe} - ${i.idOfShoe}</h3>
 
-                                            <div class="product-price">
+                                                <div class="product-price">
 
-                                                <strong>1.750.000₫</strong>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="owl-item active" style="width: 25%; padding-right: 10px;">
-
-                                    <div class="product-card">
-                                        <div class="product-card__inner">
-                                            <a class="product-urls" href="Product.jsp" title="MERLE LOAFERS - LF08">
-
-                                                <div class="product-card__image">
-
-                                                    <img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf2304.jpg?v=1698632377647"
-                                                         data-lazyload="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf2304.jpg?v=1698632377647"
-                                                         class="product-card-image-front img-responsive center-block"
-                                                         alt="MERLE LOAFERS - LF08">
+                                                    <strong>${i.priceOfShoe}₫</strong>
 
                                                 </div>
-
-                                            </a>
-
-                                            <h4 class="product-single__series">LOAFER</h4>
-
-                                            <h3 class="product-card__title">MERLE LOAFERS - LF08</h3>
-
-                                            <div class="product-price">
-
-                                                <strong>1.650.000₫</strong>
-
                                             </div>
                                         </div>
+
                                     </div>
+                                </c:forEach>
 
-                                </div>
-
-                                <div class="owl-item active" style="width: 25%; padding-right: 10px;">
-
-                                    <div class="product-card">
-                                        <div class="product-card__inner">
-                                            <a class="product-urls" href="/of32" title="SAVILLE CAPTOE OXFORD - OF32">
-
-                                                <div class="product-card__image">
-
-                                                    <img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf9565.jpg?v=1693217659420"
-                                                         data-lazyload="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf9565.jpg?v=1693217659420"
-                                                         class="product-card-image-front img-responsive center-block"
-                                                         alt="SAVILLE CAPTOE OXFORD - OF32">
-
-                                                </div>
-                                            </a>
-
-                                            <h4 class="product-single__series">OXFORD</h4>
-
-                                            <h3 class="product-card__title">SAVILLE CAPTOE OXFORD - OF32</h3>
-
-                                            <div class="product-price">
-
-                                                <strong>1.750.000₫</strong>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="owl-item active" style="width: 25%; padding-right: 10px;">
-
-                                    <div class="product-card">
-                                        <div class="product-card__inner">
-                                            <a class="product-urls" href="/db07-1" title="SIR CLASSIC DERBY - DB07">
-                                                <div class="product-card__image">
-                                                    <img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf3412.jpg?v=1701231499067"
-                                                         data-lazyload="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf3412.jpg?v=1701231499067"
-                                                         class="product-card-image-front img-responsive center-block"
-                                                         alt="SIR CLASSIC DERBY - DB07">
-
-                                                </div>
-                                            </a>
-
-                                            <h4 class="product-single__series">DERBY</h4>
-
-                                            <h3 class="product-card__title">SIR CLASSIC DERBY - DB07</h3>
-
-                                            <div class="product-price">
-
-                                                <strong>1.750.000₫</strong>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                            </div>
 
                             <a href="san-pham-noi-bat" title="Xem tất cả NEW ARRIVALS"
                                class="evo-button mobile-viewmore">Xem tất cả . <strong>NEW ARRIVALS</strong></a>
@@ -282,7 +197,7 @@
 </div>
 <div class="section-4">
     <div class="section_banner">
-        <div class="container" style wi>
+        <div class="container" >
             <div class="row">
 
                 <div class="col-sm-4 col-xs-12 evo-margin">
@@ -355,125 +270,39 @@
 
                             <div class="owl-stage" style="width: 100%;">
 
-                                <div class="owl-item active" style="width: 25%; padding-right: 10px;">
+                                <c:forEach var="i" items="${listP.firstFourOxford}">
+                                    <div class="owl-item active" style="width: 25%; padding-right: 10px;">
 
-                                    <div class="product-card">
-                                        <div class="product-card__inner">
-                                            <a class="product-urls" href="" title="SIR CLASSIC OXFORD - OF34">
+                                        <div class="product-card">
+                                                <div class="product-card__inner">
+                                                    <a class="product-urls" href="clickOnPr?id=${i.idOfShoe}" title="SIR CLASSIC OXFORD - OF34">
 
-                                                <div class="product-card__image">
+                                                        <div class="product-card__image">
 
-                                                    <img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf2434.jpg?v=1699335369040"
-                                                         data-lazyload="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf2434.jpg?v=1699335369040"
-                                                         class="product-card-image-front img-responsive center-block"
-                                                         alt="SIR CLASSIC OXFORD - OF34">
+                                                            <img src="${i.imgOfShoe}"
+                                                                 data-lazyload="${i.imgOfShoe}"
+                                                                 class="product-card-image-front img-responsive center-block"
+                                                                 alt="${i.nameOfShoe} ${i.typeOfShoe} - ${i.idOfShoe}">
 
+                                                        </div>
+
+                                                    </a>
+
+                                                    <h4 class="product-single__series">${i.typeOfShoe}</h4>
+
+                                                    <h3 class="product-card__title">${i.nameOfShoe} ${i.typeOfShoe} - ${i.idOfShoe}</h3>
+
+                                                    <div class="product-price">
+
+                                                        <strong>${i.priceOfShoe}₫</strong>
+
+                                                    </div>
                                                 </div>
 
-                                            </a>
-
-                                            <h4 class="product-single__series">OXFORD</h4>
-
-                                            <h3 class="product-card__title">SIR CLASSIC OXFORD - OF34</h3>
-
-                                            <div class="product-price">
-
-                                                <strong>1.750.000₫</strong>
-
-                                            </div>
                                         </div>
+
                                     </div>
-
-                                </div>
-
-                                <div class="owl-item active" style="width: 25%; padding-right: 10px;">
-
-                                    <div class="product-card">
-                                        <div class="product-card__inner">
-                                            <a class="product-urls" href="/lf08" title="MERLE LOAFERS - LF08">
-
-                                                <div class="product-card__image">
-
-                                                    <img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf2304.jpg?v=1698632377647"
-                                                         data-lazyload="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf2304.jpg?v=1698632377647"
-                                                         class="product-card-image-front img-responsive center-block"
-                                                         alt="MERLE LOAFERS - LF08">
-
-                                                </div>
-
-                                            </a>
-
-                                            <h4 class="product-single__series">LOAFER</h4>
-
-                                            <h3 class="product-card__title">MERLE LOAFERS - LF08</h3>
-
-                                            <div class="product-price">
-
-                                                <strong>1.650.000₫</strong>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="owl-item active" style="width: 25%; padding-right: 10px;">
-
-                                    <div class="product-card">
-                                        <div class="product-card__inner">
-                                            <a class="product-urls" href="/of32" title="SAVILLE CAPTOE OXFORD - OF32">
-
-                                                <div class="product-card__image">
-
-                                                    <img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf9565.jpg?v=1693217659420"
-                                                         data-lazyload="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf9565.jpg?v=1693217659420"
-                                                         class="product-card-image-front img-responsive center-block"
-                                                         alt="SAVILLE CAPTOE OXFORD - OF32">
-
-                                                </div>
-                                            </a>
-
-                                            <h4 class="product-single__series">OXFORD</h4>
-
-                                            <h3 class="product-card__title">SAVILLE CAPTOE OXFORD - OF32</h3>
-
-                                            <div class="product-price">
-
-                                                <strong>1.750.000₫</strong>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="owl-item active" style="width: 25%; padding-right: 10px;">
-
-                                    <div class="product-card">
-                                        <div class="product-card__inner">
-                                            <a class="product-urls" href="/db07-1" title="SIR CLASSIC DERBY - DB07">
-                                                <div class="product-card__image">
-                                                    <img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf3412.jpg?v=1701231499067"
-                                                         data-lazyload="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf3412.jpg?v=1701231499067"
-                                                         class="product-card-image-front img-responsive center-block"
-                                                         alt="SIR CLASSIC DERBY - DB07">
-
-                                                </div>
-                                            </a>
-
-                                            <h4 class="product-single__series">DERBY</h4>
-
-                                            <h3 class="product-card__title">SIR CLASSIC DERBY - DB07</h3>
-
-                                            <div class="product-price">
-
-                                                <strong>1.750.000₫</strong>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
+                                </c:forEach>
 
 
                             </div>
@@ -522,129 +351,39 @@
 
                             <div class="owl-stage" style="width: 100%;">
 
-                                <div class="owl-item active" style="width: 25%; padding-right: 10px;">
+                                <c:forEach var="i" items="${listP.firstFourLoafer}">
+                                    <div class="owl-item active" style="width: 25%; padding-right: 10px;">
 
-                                    <div class="product-card">
-                                        <div class="product-card__inner">
-                                            <a class="product-urls" href="" title="SIR CLASSIC OXFORD - OF34">
+                                        <div class="product-card">
+                                            <div class="product-card__inner">
+                                                <a class="product-urls" href="clickOnPr?id=${i.idOfShoe}" title="SIR CLASSIC OXFORD - OF34">
 
-                                                <div class="product-card__image">
+                                                    <div class="product-card__image">
 
-                                                    <img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf2434.jpg?v=1699335369040"
-                                                         data-lazyload="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf2434.jpg?v=1699335369040"
-                                                         class="product-card-image-front img-responsive center-block"
-                                                         alt="SIR CLASSIC OXFORD - OF34">
+                                                        <img src="${i.imgOfShoe}"
+                                                             data-lazyload="${i.imgOfShoe}"
+                                                             class="product-card-image-front img-responsive center-block"
+                                                             alt="${i.nameOfShoe} ${i.typeOfShoe} - ${i.idOfShoe}">
 
-                                                </div>
+                                                    </div>
 
-                                            </a>
+                                                </a>
 
-                                            <h4 class="product-single__series">OXFORD</h4>
+                                                <h4 class="product-single__series">${i.typeOfShoe}</h4>
 
-                                            <h3 class="product-card__title">SIR CLASSIC OXFORD - OF34</h3>
+                                                <h3 class="product-card__title">${i.nameOfShoe} ${i.typeOfShoe} - ${i.idOfShoe}</h3>
 
-                                            <div class="product-price">
+                                                <div class="product-price">
 
-                                                <strong>1.750.000₫</strong>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="owl-item active" style="width: 25%; padding-right: 10px;">
-
-                                    <div class="product-card">
-                                        <div class="product-card__inner">
-                                            <a class="product-urls" href="/lf08" title="MERLE LOAFERS - LF08">
-
-                                                <div class="product-card__image">
-
-                                                    <img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf2304.jpg?v=1698632377647"
-                                                         data-lazyload="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf2304.jpg?v=1698632377647"
-                                                         class="product-card-image-front img-responsive center-block"
-                                                         alt="MERLE LOAFERS - LF08">
+                                                    <strong>${i.priceOfShoe}₫</strong>
 
                                                 </div>
-
-                                            </a>
-
-                                            <h4 class="product-single__series">LOAFER</h4>
-
-                                            <h3 class="product-card__title">MERLE LOAFERS - LF08</h3>
-
-                                            <div class="product-price">
-
-                                                <strong>1.650.000₫</strong>
-
                                             </div>
                                         </div>
+
                                     </div>
-
-                                </div>
-
-                                <div class="owl-item active" style="width: 25%; padding-right: 10px;">
-
-                                    <div class="product-card">
-                                        <div class="product-card__inner">
-                                            <a class="product-urls" href="/of32" title="SAVILLE CAPTOE OXFORD - OF32">
-
-                                                <div class="product-card__image">
-
-                                                    <img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf9565.jpg?v=1693217659420"
-                                                         data-lazyload="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf9565.jpg?v=1693217659420"
-                                                         class="product-card-image-front img-responsive center-block"
-                                                         alt="SAVILLE CAPTOE OXFORD - OF32">
-
-                                                </div>
-                                            </a>
-
-                                            <h4 class="product-single__series">OXFORD</h4>
-
-                                            <h3 class="product-card__title">SAVILLE CAPTOE OXFORD - OF32</h3>
-
-                                            <div class="product-price">
-
-                                                <strong>1.750.000₫</strong>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="owl-item active" style="width: 25%; padding-right: 10px;">
-
-                                    <div class="product-card">
-                                        <div class="product-card__inner">
-                                            <a class="product-urls" href="/db07-1" title="SIR CLASSIC DERBY - DB07">
-                                                <div class="product-card__image">
-                                                    <img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf3412.jpg?v=1701231499067"
-                                                         data-lazyload="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf3412.jpg?v=1701231499067"
-                                                         class="product-card-image-front img-responsive center-block"
-                                                         alt="SIR CLASSIC DERBY - DB07">
-
-                                                </div>
-                                            </a>
-
-                                            <h4 class="product-single__series">DERBY</h4>
-
-                                            <h3 class="product-card__title">SIR CLASSIC DERBY - DB07</h3>
-
-                                            <div class="product-price">
-
-                                                <strong>1.750.000₫</strong>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
+                                </c:forEach>
                             </div>
-
                             <a href="san-pham-noi-bat" title="Xem tất cả NEW ARRIVALS"
                                class="evo-button mobile-viewmore">Xem tất cả . <strong>NEW ARRIVALS</strong></a>
 
@@ -689,294 +428,38 @@
 
                             <div class="owl-stage" style="width: 100%;">
 
-                                <div class="owl-item active" style="width: 25%; padding-right: 10px;">
+                                <c:forEach var="i" items="${listP.firstFourDerby}">
+                                    <div class="owl-item active" style="width: 25%; padding-right: 10px;">
 
-                                    <div class="product-card">
-                                        <div class="product-card__inner">
-                                            <a class="product-urls" href="" title="SIR CLASSIC OXFORD - OF34">
+                                        <div class="product-card">
+                                            <div class="product-card__inner">
+                                                <a class="product-urls" href="clickOnPr?id=${i.idOfShoe}" title="SIR CLASSIC OXFORD - OF34">
 
-                                                <div class="product-card__image">
+                                                    <div class="product-card__image">
 
-                                                    <img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf2434.jpg?v=1699335369040"
-                                                         data-lazyload="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf2434.jpg?v=1699335369040"
-                                                         class="product-card-image-front img-responsive center-block"
-                                                         alt="SIR CLASSIC OXFORD - OF34">
+                                                        <img src="${i.imgOfShoe}"
+                                                             data-lazyload="${i.imgOfShoe}"
+                                                             class="product-card-image-front img-responsive center-block"
+                                                             alt="${i.nameOfShoe} ${i.typeOfShoe} - ${i.idOfShoe}">
 
-                                                </div>
+                                                    </div>
 
-                                            </a>
+                                                </a>
 
-                                            <h4 class="product-single__series">OXFORD</h4>
+                                                <h4 class="product-single__series">${i.typeOfShoe}</h4>
 
-                                            <h3 class="product-card__title">SIR CLASSIC OXFORD - OF34</h3>
+                                                <h3 class="product-card__title">${i.nameOfShoe} ${i.typeOfShoe} - ${i.idOfShoe}</h3>
 
-                                            <div class="product-price">
+                                                <div class="product-price">
 
-                                                <strong>1.750.000₫</strong>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="owl-item active" style="width: 25%; padding-right: 10px;">
-
-                                    <div class="product-card">
-                                        <div class="product-card__inner">
-                                            <a class="product-urls" href="/lf08" title="MERLE LOAFERS - LF08">
-
-                                                <div class="product-card__image">
-
-                                                    <img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf2304.jpg?v=1698632377647"
-                                                         data-lazyload="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf2304.jpg?v=1698632377647"
-                                                         class="product-card-image-front img-responsive center-block"
-                                                         alt="MERLE LOAFERS - LF08">
+                                                    <strong>${i.priceOfShoe}₫</strong>
 
                                                 </div>
-
-                                            </a>
-
-                                            <h4 class="product-single__series">LOAFER</h4>
-
-                                            <h3 class="product-card__title">MERLE LOAFERS - LF08</h3>
-
-                                            <div class="product-price">
-
-                                                <strong>1.650.000₫</strong>
-
                                             </div>
                                         </div>
+
                                     </div>
-
-                                </div>
-
-                                <div class="owl-item active" style="width: 25%; padding-right: 10px;">
-
-                                    <div class="product-card">
-                                        <div class="product-card__inner">
-                                            <a class="product-urls" href="/of32" title="SAVILLE CAPTOE OXFORD - OF32">
-
-                                                <div class="product-card__image">
-
-                                                    <img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf9565.jpg?v=1693217659420"
-                                                         data-lazyload="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf9565.jpg?v=1693217659420"
-                                                         class="product-card-image-front img-responsive center-block"
-                                                         alt="SAVILLE CAPTOE OXFORD - OF32">
-
-                                                </div>
-                                            </a>
-
-                                            <h4 class="product-single__series">OXFORD</h4>
-
-                                            <h3 class="product-card__title">SAVILLE CAPTOE OXFORD - OF32</h3>
-
-                                            <div class="product-price">
-
-                                                <strong>1.750.000₫</strong>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="owl-item active" style="width: 25%; padding-right: 10px;">
-
-                                    <div class="product-card">
-                                        <div class="product-card__inner">
-                                            <a class="product-urls" href="/db07-1" title="SIR CLASSIC DERBY - DB07">
-                                                <div class="product-card__image">
-                                                    <img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf3412.jpg?v=1701231499067"
-                                                         data-lazyload="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf3412.jpg?v=1701231499067"
-                                                         class="product-card-image-front img-responsive center-block"
-                                                         alt="SIR CLASSIC DERBY - DB07">
-
-                                                </div>
-                                            </a>
-
-                                            <h4 class="product-single__series">DERBY</h4>
-
-                                            <h3 class="product-card__title">SIR CLASSIC DERBY - DB07</h3>
-
-                                            <div class="product-price">
-
-                                                <strong>1.750.000₫</strong>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                            </div>
-
-                            <a href="san-pham-noi-bat" title="Xem tất cả NEW ARRIVALS"
-                               class="evo-button mobile-viewmore">Xem tất cả . <strong>NEW ARRIVALS</strong></a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-</div>
-<div class="section-8">
-    <div class="container">
-
-        <div class="row">
-
-            <div class="col-md-12">
-
-                <div class="section_product section_product_best_sell clearfix">
-
-                    <div class="section-head clearfix text-center">
-
-                        <h2 class="title_blog">
-
-                            <a href="" title="BELT - WALLET">
-
-                                <strong>BELT - WALLET</strong>
-
-                            </a>
-
-                        </h2>
-
-                    </div>
-
-                    <div class="product-blocks clearfix">
-
-                        <div class="evo-owl-product owl-carousel not-dqowl clearfix owl-loaded owl-drag">
-
-                            <div class="owl-stage" style="width: 100%;">
-
-                                <div class="owl-item active" style="width: 25%; padding-right: 10px;">
-
-                                    <div class="product-card">
-                                        <div class="product-card__inner">
-                                            <a class="product-urls" href="" title="SIR CLASSIC OXFORD - OF34">
-
-                                                <div class="product-card__image">
-
-                                                    <img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf2434.jpg?v=1699335369040"
-                                                         data-lazyload="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf2434.jpg?v=1699335369040"
-                                                         class="product-card-image-front img-responsive center-block"
-                                                         alt="SIR CLASSIC OXFORD - OF34">
-
-                                                </div>
-
-                                            </a>
-
-                                            <h4 class="product-single__series">OXFORD</h4>
-
-                                            <h3 class="product-card__title">SIR CLASSIC OXFORD - OF34</h3>
-
-                                            <div class="product-price">
-
-                                                <strong>1.750.000₫</strong>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="owl-item active" style="width: 25%; padding-right: 10px;">
-
-                                    <div class="product-card">
-                                        <div class="product-card__inner">
-                                            <a class="product-urls" href="/lf08" title="MERLE LOAFERS - LF08">
-
-                                                <div class="product-card__image">
-
-                                                    <img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf2304.jpg?v=1698632377647"
-                                                         data-lazyload="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf2304.jpg?v=1698632377647"
-                                                         class="product-card-image-front img-responsive center-block"
-                                                         alt="MERLE LOAFERS - LF08">
-
-                                                </div>
-
-                                            </a>
-
-                                            <h4 class="product-single__series">LOAFER</h4>
-
-                                            <h3 class="product-card__title">MERLE LOAFERS - LF08</h3>
-
-                                            <div class="product-price">
-
-                                                <strong>1.650.000₫</strong>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="owl-item active" style="width: 25%; padding-right: 10px;">
-
-                                    <div class="product-card">
-                                        <div class="product-card__inner">
-                                            <a class="product-urls" href="/of32" title="SAVILLE CAPTOE OXFORD - OF32">
-
-                                                <div class="product-card__image">
-
-                                                    <img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf9565.jpg?v=1693217659420"
-                                                         data-lazyload="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf9565.jpg?v=1693217659420"
-                                                         class="product-card-image-front img-responsive center-block"
-                                                         alt="SAVILLE CAPTOE OXFORD - OF32">
-
-                                                </div>
-                                            </a>
-
-                                            <h4 class="product-single__series">OXFORD</h4>
-
-                                            <h3 class="product-card__title">SAVILLE CAPTOE OXFORD - OF32</h3>
-
-                                            <div class="product-price">
-
-                                                <strong>1.750.000₫</strong>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="owl-item active" style="width: 25%; padding-right: 10px;">
-
-                                    <div class="product-card">
-                                        <div class="product-card__inner">
-                                            <a class="product-urls" href="/db07-1" title="SIR CLASSIC DERBY - DB07">
-                                                <div class="product-card__image">
-                                                    <img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf3412.jpg?v=1701231499067"
-                                                         data-lazyload="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf3412.jpg?v=1701231499067"
-                                                         class="product-card-image-front img-responsive center-block"
-                                                         alt="SIR CLASSIC DERBY - DB07">
-
-                                                </div>
-                                            </a>
-
-                                            <h4 class="product-single__series">DERBY</h4>
-
-                                            <h3 class="product-card__title">SIR CLASSIC DERBY - DB07</h3>
-
-                                            <div class="product-price">
-
-                                                <strong>1.750.000₫</strong>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
+                                </c:forEach>
                             </div>
 
                             <a href="san-pham-noi-bat" title="Xem tất cả NEW ARRIVALS"
@@ -1163,6 +646,6 @@
         </div>
     </div>
 </footer>
-
+</div>
 </body>
 </html>

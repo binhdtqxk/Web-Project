@@ -16,7 +16,7 @@
             </div>
 
             <div class="center-header col-1">
-                <a href="" class="logo wrapper"
+                <a href="index.jsp" class="logo wrapper"
                    title="Be Classy - Giày Da Nam, Giày Tây Nam Sang Trọng"> <img
                         class="center-block"
                         src="//bizweb.dktcdn.net/100/292/624/themes/758446/assets/logo.png?1697690581561"
@@ -55,7 +55,7 @@
 
                     <li class="userHelper-nav-item userHelper-nav-cart mini-cart">
 
-                        <a href="">GIỎ HÀNG <i class="ti-shopping-cart"></i> <span
+                        <a href="ShoppingCart.jsp">GIỎ HÀNG <i class="ti-shopping-cart"></i> <span
                                 class="count-item-pr">0</span>
                         </a>
 

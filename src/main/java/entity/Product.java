@@ -3,9 +3,9 @@ public class Product {
 	private String imgOfShoe;
 	private String typeOfShoe;
 	private String nameOfShoe;
-	private String idOfShoe;
+	private int idOfShoe;
 	private int priceOfShoe;
-	public Product(String imgOfShoe, String typeOfShoe, String nameOfShoe, String idOfShoe, int priceOfShoe) {
+	public Product(String imgOfShoe, String typeOfShoe, String nameOfShoe, int idOfShoe, int priceOfShoe) {
 		super();
 		this.imgOfShoe = imgOfShoe;
 		this.typeOfShoe = typeOfShoe;
@@ -13,6 +13,14 @@ public class Product {
 		this.idOfShoe = idOfShoe;
 		this.priceOfShoe = priceOfShoe;
 	}
+
+	public Product(String imgOfShoe, String typeOfShoe, String nameOfShoe, int priceOfShoe) {
+		this.imgOfShoe = imgOfShoe;
+		this.typeOfShoe = typeOfShoe;
+		this.nameOfShoe = nameOfShoe;
+		this.priceOfShoe = priceOfShoe;
+	}
+
 	public Product() {
 		// TODO Auto-generated constructor stub
 	}
@@ -34,10 +42,10 @@ public class Product {
 	public void setNameOfShoe(String nameOfShoe) {
 		this.nameOfShoe = nameOfShoe;
 	}
-	public String getIdOfShoe() {
+	public int getIdOfShoe() {
 		return idOfShoe;
 	}
-	public void setIdOfShoe(String idOfShoe) {
+	public void setIdOfShoe(int idOfShoe) {
 		this.idOfShoe = idOfShoe;
 	}
 	public int getPriceOfShoe() {

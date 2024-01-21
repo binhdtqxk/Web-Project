@@ -79,8 +79,8 @@
                         <th>Link ảnh giày</th>
                         <th>Loại giày</th>
                         <th>Tên giày</th>
-                        <th>Mã giày</th>
                         <th>Giá giày</th>
+                        <th>Mã giày</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -89,8 +89,8 @@
                             <td>${o.getImgOfShoe()}</td>
                             <td>${o.getTypeOfShoe()}</td>
                             <td>${o.getNameOfShoe()}</td>
-                            <td>${o.getIdOfShoe()}</td>
                             <td>${o.getPriceOfShoe()}</td>
+                            <td>${o.getIdOfShoe()}</td>
                         </tr>
                     </c:forEach>
                     </tbody>
@@ -123,17 +123,15 @@
                    class="form-control" value="" name="nameShoe"
                    id="nameShoe" required="">
 
-
-            <label for="idShoe">Mã giày<span class="required">*</span></label>
-            <input placeholder="Nhập mã giày" type="text"
-                   class="form-control" value="" name="idShoe" id="idShoe"
-                   required="">
-
-
             <label for="priceShoe">Giá giày<span class="required">*</span></label>
             <input placeholder="Nhập giá giày" type="text"
                    class="form-control" value="" name="priceShoe"
                    id="priceShoe" required="">
+
+            <label for="idShoe">Mã giày<span class="required">*</span></label>
+            <input placeholder="Nhập mã giày" type="text"
+                   class="form-control" value="" name="idShoe" id="idShoe">
+
             <div class="btn">
                 <button type="submit" value="Thêm sản phẩm" class="add-button js-add-button">Thêm sản phẩm
                 </button>
@@ -231,15 +229,6 @@
     }
 
 
-    const notiAdd = document.querySelector('.js-noti-add')
-
-
-    function showNotiAdd() {
-        notiAdd.classList.add('open')
-    }
-
-
-    addProductSuccess.addEventListener('click', showNotiAdd)
 
 </script>
 </body>

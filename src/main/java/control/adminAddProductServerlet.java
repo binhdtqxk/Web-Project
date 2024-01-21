@@ -27,10 +27,9 @@ public class adminAddProductServerlet extends HttpServlet {
         String imgLink = req.getParameter("imgLink");
         String typeShoe = req.getParameter("typeShoe");
         String nameShoe = req.getParameter("nameShoe");
-        String idShoe = req.getParameter("idShoe");
         int priceShoe = Integer.parseInt(req.getParameter("priceShoe"));
 
-        Product product = new Product(imgLink, typeShoe, nameShoe, idShoe, priceShoe);
+        Product product = new Product(imgLink, typeShoe, nameShoe, priceShoe);
         String success = "Add success";
         int count = dao.addProduct(product);
         if (count > 0) {

@@ -27,13 +27,11 @@ public class adminProductList extends HttpServlet {
 
         req.setCharacterEncoding("UTF-8");
 
-        String success = "Add success";
         List<Product> productList = new ArrayList<Product>();
         try {
             productList = dao.getAllProduct();
             if(productList != null) {
                 req.setAttribute("productList", productList);
-                System.out.println("Success attribute set: " + success); // Log để kiểm tra
                 req.getRequestDispatcher("adminProduct.jsp").forward(req, resp);
             }else {
             System.out.println("Add product failed."); // Log để kiểm tra

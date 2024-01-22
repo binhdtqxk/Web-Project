@@ -45,10 +45,9 @@
     <link rel="stylesheet" href="assets/css/style.css"/>
 </head>
 <body>
-<c:import url="header.jsp"/>
-<div class="container admin_container">
-    <c:import url="adminSidebar.jsp"/>
 
+<c:import url="header.jsp"/>
+<div class=" admin_container">
     <div class="main-content">
         <div id="manage-product" class="content-wrapper">
             <header class="header-admin">
@@ -63,11 +62,14 @@
                     <i class="fa-solid fa-plus"></i>
                     Thêm
                 </button>
-                <form class="content-search" action="">
+                <form method="post" class="content-search" action="searchProductAdmin">
+                    <c:set var="search" value="${requestScope.search}"/>
                     <input
                             type="text"
+                            name="id"
                             placeholder="Tìm kiếm ..."
                             class="input-search"
+                            value="${search}"
                     />
                     <i class="icon fa-solid fa-magnifying-glass"></i>
                 </form>
@@ -84,7 +86,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${requestScope.productList}" var="o">
+                    <c:forEach var="o" items="${requestScope.productList}">
                         <tr>
                             <td>${o.getImgOfShoe()}</td>
                             <td>${o.getTypeOfShoe()}</td>

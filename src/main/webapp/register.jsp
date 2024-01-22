@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
+<%@ page isELIgnored="false" %>
 <html>
 
 <head>
@@ -22,7 +23,7 @@
 
 <body>
 <c:import url="header.jsp"/>
-
+<c:set var="i" value="${requestScope.error}"/>
 <!-- Map web -->
 <div class="map">
     <ul class="sub-map">
@@ -40,7 +41,15 @@
             <div id="login">
                 <h1 class="title-head ">Đăng ký tài khoản</h1>
                 <form method="post" action="register" id="customer_register" accept-charset="UTF-8">
-
+                    <div class="form-signup">
+                        <c:if test="${not empty i}">
+                            <div class="errors">
+                                <ul>
+                                    <li>Email đã tồn tại.</li>
+                                </ul>
+                            </div>
+                        </c:if>
+                    </div>
                     <div class="form-signup clearfix">
                         <div class="row">
                             <div class="col-md-12">
@@ -71,7 +80,7 @@
                             <div class="col-md-12">
 
                                 <label for="email">Email<span class="required">*</span></label>
-                                <input  placeholder="Nhập Địa chỉ Email" type="email"
+                                <input placeholder="Nhập Địa chỉ Email" type="email"
                                        class="form-control form-control-lg error" data-validation="email"
                                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$"
                                        data-validation-error-msg="Email sai định dạng" value="" name="email" id="email"

@@ -43,7 +43,14 @@
                                 <!-- Hiển thị thông tin người dùng nếu đã đăng nhập -->
                                 <ul class="sub-nav-account">
                                     <li>
-                                        <a href="profile.jsp">Xin chào, ${auth.lastName}</a>
+                                        <c:choose>
+                                            <c:when test="${auth.getRole() == 1}">
+                                                <a href="adminProduct.jsp">Xin chào, ${auth.lastName}</a>
+                                            </c:when>
+                                            <c:when test="${auth.getRole() == 0}">
+                                                <a href="profile.jsp">Xin chào, ${auth.lastName}</a>
+                                            </c:when>
+                                        </c:choose>
                                     </li>
                                     <li>
                                         <a href="signOut" class="sign_out">Đăng xuất</a>

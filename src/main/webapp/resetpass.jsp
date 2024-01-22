@@ -39,7 +39,7 @@
     <h1 class="title-head">Đổi mật khẩu</h1>
   </div>
 
-  <form method="post" action="login" id="customer_login" accept-charset="UTF-8"
+  <form method="post" action="UpdatePass" id="customer_login" accept-charset="UTF-8"
         class="has-validation-callback"><input name="FormType" type="hidden" value="customer_login"><input
           name="utf8" type="hidden" value="true">
 
@@ -52,18 +52,18 @@
              data-validation-error-msg="Email sai định dạng">
 
 
-      <label for="pw-old">Mật khẩu cu<span class="required">*</span></label>
-      <input autocomplete="off" placeholder="Nhập Mật khẩu Cu" type="password" id="pw-old"
+      <label for="pw-old">Mật khẩu cũ<span class="required">*</span></label>
+      <input autocomplete="off" placeholder="Nhập Mật khẩu cũ" type="password" id="pw-old"
              class="form-control" value="" name="passwordOld"
              data-validation-error-msg="Không được để trống" data-validation="required">
 
-      <label for="pw-new">Mật khẩu moi<span class="required">*</span></label>
-      <input autocomplete="off" placeholder="Nhập Mật khẩu Cu" type="password" id="pw-new"
+      <label for="pw-new">Mật khẩu mới<span class="required">*</span></label>
+      <input autocomplete="off" placeholder="Nhập Lại Mật Khẩu cũ" type="password" id="pw-new"
              class="form-control" value="" name="passwordOld"
              data-validation-error-msg="Không được để trống" data-validation="required">
 
       <div class="pull-xs-left text-center" style="margin-top: 15px;">
-        <button class="btn btn-style btn-blues" type="submit" value="Doi mat khau">Dat lai mat khau</button>
+        <button class="btn btn-style btn-blues" type="submit" value="Doi mat khau">Đặt lại mật khẩu</button>
       </div>
       <div class="clearfix"></div>
       <p class="text-center">
@@ -72,7 +72,7 @@
       </p>
       <div class="text-login text-center">
         <p>
-          Quay lai <a href="index.jsp" title="Trang chu">tại đây.</a>
+          Quay lại <a href="index.jsp" title="Trang chu">tại đây.</a>
         </p>
       </div>
     </div>

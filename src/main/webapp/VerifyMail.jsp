@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
+<%@ page isELIgnored="false"%>
 <html>
 
 <head>
@@ -21,7 +22,8 @@
 
 <body>
 <c:import url="header.jsp"/>
-
+<c:set value="${requestScope.error}" var="i"/>
+<c:set value="${requestScope.user}" var="user"/>
 <!-- Map web -->
 <div class="map">
     <ul class="sub-map">
@@ -38,18 +40,20 @@
         <h1 class="title-head">Nhập mã xác minh</h1>
         <h5 class="subtitle">Bạn quên mật khẩu? Nhập mã xác minh email để lấy lại mật khẩu qua email.</h5>
     </div>
-
-    <form method="post" action="login" id="customer_login" accept-charset="UTF-8"
+    <c:if test="${not empty i}">
+        <div>
+            <h5 class="subtitle">${i}</h5>
+        </div>
+    </c:if>
+    <form method="post" action="VerifyCodeForgot" id="customer_login" accept-charset="UTF-8"
           class="has-validation-callback"><input name="FormType" type="hidden" value="customer_login"><input
             name="utf8" type="hidden" value="true">
 
         <div class="form-signup clearfix">
 
             <label for="email-login">Mã xác minh<span class="required">*</span></label>
-            <input autocomplete="off" placeholder="Nhập mã xác minh" type="email" id="email-login"
-                   class="form-control" value="" name="email" required=""
-                   data-validation="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$"
-                   data-validation-error-msg="Email sai định dạng">
+            <input autocomplete="off" placeholder="Nhập mã xác minh" type="text" id="email-login"
+                   class="form-control" value="" name="code" required=""    >
 
             <div class="pull-xs-left text-center" style="margin-top: 15px;">
                 <button class="btn btn-style btn-blues" type="submit" value="Xác nhận">Xác nhận</button>

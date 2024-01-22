@@ -28,7 +28,7 @@ public class MailService {
                     });
             Message message = new MimeMessage(session);
 
-            message.setFrom(new InternetAddress(MailProperties.username, "WEB BAN HANG"));
+            message.setFrom(new InternetAddress(MailProperties.username, "BeClassy"));
             message.setRecipients(Message.RecipientType.TO,
                     InternetAddress.parse(to));
             message.setSubject(subject);

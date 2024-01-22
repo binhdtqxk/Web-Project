@@ -58,7 +58,7 @@
              data-validation-error-msg="Không được để trống" data-validation="required">
 
       <label for="pw-new">Mật khẩu mới<span class="required">*</span></label>
-      <input autocomplete="off" placeholder="Nhập Lại Mật Khẩu cũ" type="password" id="pw-new"
+      <input autocomplete="off" placeholder="Nhập Mật Khẩu Mới" type="password" id="pw-new"
              class="form-control" value="" name="passwordOld"
              data-validation-error-msg="Không được để trống" data-validation="required">
 

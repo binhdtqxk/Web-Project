@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 @WebServlet(value = "/addProduct")
-public class AddProductServlet extends HttpServlet {
+public class AddProductToCartServlet extends HttpServlet {
     List<Product> listP=new ArrayList<>();
     DAOProduct dao =new DAOProduct();
     Map<String,Integer> numberSaving= new HashMap<>();
@@ -25,9 +25,9 @@ public class AddProductServlet extends HttpServlet {
     Map<Integer,String> sizeSaving= new HashMap<>();
 
     Map<Integer,String> colorSaving= new HashMap<>();
-    int priceSum=0;
+    int priceSum;
 
-    int numberOfProduct=0;
+    int numberOfProduct;
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doPost(req,resp);
@@ -36,6 +36,19 @@ public class AddProductServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     HttpSession session=req.getSession();
+    if(session.getAttribute("numberOfProduct")!=null){
+        numberOfProduct= (int) session.getAttribute("numberOfProduct");
+    }
+        if(session.getAttribute("priceSum")!=null){
+            priceSum= (int) session.getAttribute("priceSum");
+        }
+        if(session.getAttribute("listPr")!=null){
+            listP= (List<Product>) session.getAttribute("listPr");
+        }
+        if(session.getAttribute("mapP")!=null){
+            numberSaving= (Map<String, Integer>) session.getAttribute("mapP");
+        }
+
     Product p= new Product();
     String size=req.getParameter("option1");
     String color=req.getParameter("option2");

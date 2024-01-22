@@ -20,13 +20,14 @@ public class VerifyCodeFG extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if (req.getAttribute("user") == null) {
+        HttpSession session= req.getSession();
+        User user = (User) session.getAttribute("user");
+        if (user == null) {
             String error = "";
             int codeIn = Integer.parseInt(req.getParameter("code"));
-            HttpSession session = req.getSession();
             int codeReal = (int) session.getAttribute("code");
             if (codeIn == codeReal) {
-                resp.sendRedirect("resetpass.jsp");
+                resp.sendRedirect("ChangePass.jsp");
             } else {
                 error = "Bạn đã nhập sai mã,vui lòng nhập lại";
                 req.setAttribute("error", error);
@@ -34,14 +35,12 @@ public class VerifyCodeFG extends HttpServlet {
             }
         }    else{
             DAORegister dao= new DAORegister();
-            User user= (User) req.getAttribute("user");
             dao.addAccount(user);
             String error = "";
             int codeIn = Integer.parseInt(req.getParameter("code"));
-            HttpSession session = req.getSession();
             int codeReal = (int) session.getAttribute("code");
             if (codeIn == codeReal) {
-                resp.sendRedirect("resetpass.jsp");
+                resp.sendRedirect("login.jsp");
             } else {
                 error = "Bạn đã nhập sai mã,vui lòng nhập lại";
                 req.setAttribute("error", error);

@@ -23,7 +23,6 @@
 <body>
 <c:import url="header.jsp"/>
 <c:set value="${requestScope.error}" var="i"/>
-<c:set value="${requestScope.user}" var="user"/>
 <!-- Map web -->
 <div class="map">
     <ul class="sub-map">
@@ -38,7 +37,7 @@
 <div id="login">
     <div class="text-center margin-bottom-30">
         <h1 class="title-head">Nhập mã xác minh</h1>
-        <h5 class="subtitle">Bạn quên mật khẩu? Nhập mã xác minh email để lấy lại mật khẩu qua email.</h5>
+        <h5 class="subtitle">Nhập mã xác minh email để xác thực tài khoản.</h5>
     </div>
     <c:if test="${not empty i}">
         <div>

@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored="false" %>
 <html>
 
 <head>
@@ -23,7 +24,7 @@
 
 <c:import url="header.jsp"/>
 <!-- Map web -->
-
+<c:set value="${requestScope.error}" var="error"/>
 <div class="map">
   <ul class="sub-map">
     <li><a href="index.jsp" title="Trang chủ" class="home">Trang chủ > </a></li>
@@ -38,7 +39,11 @@
   <div class="text-center margin-bottom-30">
     <h1 class="title-head">Đăng nhập tài khoản</h1>
   </div>
-
+<c:if test="${not empty error}">
+  <div>
+    <h5>${error}</h5>
+  </div>
+</c:if>
   <form method="post" action="login" id="customer_login" accept-charset="UTF-8"
         class="has-validation-callback"><input name="FormType" type="hidden" value="customer_login"><input
           name="utf8" type="hidden" value="true">

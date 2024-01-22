@@ -3,6 +3,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored="false"%>
 <header class="header">
+    <c:set value="${sessionScope.numberOfProduct}" var="i"/>
     <div class="container">
         <!-- Start top-header -->
         <div class="row top-header">
@@ -62,8 +63,17 @@
 
                     <li class="userHelper-nav-item userHelper-nav-cart mini-cart">
 
-                        <a href="ShoppingCart.jsp">GIỎ HÀNG <i class="ti-shopping-cart"></i> <span
-                                class="count-item-pr">0</span>
+                        <a href="ShoppingCart.jsp">GIỎ HÀNG <i class="ti-shopping-cart"></i>
+                            <c:choose>
+                                <c:when test="${not empty i}">
+                                <span
+                                        class="count-item-pr">${i}</span>
+                                </c:when>
+                                <c:otherwise>
+                                    <span
+                                            class="count-item-pr">0</span>
+                                </c:otherwise>
+                            </c:choose>
                         </a>
 
                     </li>

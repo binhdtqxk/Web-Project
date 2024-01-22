@@ -481,12 +481,11 @@
                                       fill="none" transform="translate(-5428.5 -1331.44)"></path>
                             </svg>
                         </a>
-                        <div class="rte"><h1 style="text-align: center;"><strong>SIR BUTTERFLY&nbsp;LOAFER -
-                            LF16</strong></h1>
+                        <div class="rte"><h1 style="text-align: center;"><strong>${i.nameOfShoe} ${i.typeOfShoe}</strong></h1>
                             <p style="text-align: center;">Sự linh hoạt cùng khả năng ứng biến khi kết hợp cùng nhiều&nbsp;trang
-                                phục, <strong>Sir Butterfly&nbsp;Loafer</strong> chinh phục các Quý ông với thiết kế mở
+                                phục, <strong>${i.nameOfShoe} ${i.typeOfShoe}</strong> chinh phục các Quý ông với thiết kế mở
                                 cùng điểm nhấn dây chuông vô cùng&nbsp;độc đáo.</p>
-                            <p style="text-align: center;">Tôn vính sự&nbsp;thoải mái và tối giản, <strong>Sir Butterfly&nbsp;Loafer</strong>
+                            <p style="text-align: center;">Tôn vính sự&nbsp;thoải mái và tối giản, <strong>${i.nameOfShoe} ${i.typeOfShoe}</strong>
                                 sở hữu gam màu trung tính giúp&nbsp;dễ dàng phối đồ. Đây&nbsp;sẽ là lựa chọn hàng đầu
                                 dành cho bạn khi có nhu cầu xuống phố hoặc đi làm.</p>
 
@@ -556,7 +555,7 @@
         </div>
         <div class="row margin-top-20 margin-bottom-10">
             <div class="col-lg-12">
-                <div class="related-product">
+                <div class="related-product" style="height: 500px">
                     <div class="home-title text-center">
                         <h2><a href="/new-arrivals" title="Sản phẩm liên quan">Sản phẩm <strong>liên quan</strong></a>
                         </h2>
@@ -606,7 +605,7 @@
                                     </div>
                                 </div>
                                 <div class="owl-item active" style="width: 280px; margin-right: 10px;">
-                                    <div class="product-card"><span class="sale-box">- 20% </span>
+                                    <div class="product-card">
 
 
                                         <div class="product-card__inner">
@@ -648,7 +647,7 @@
                                 </div>
                                 </div>
                                 <div class="owl-item active" style="width: 280px; margin-right: 10px;">
-                                    <div class="product-card"><span class="sale-box">- 20% </span>
+                                    <div class="product-card">
 
 
                                         <div class="product-card__inner">
@@ -690,7 +689,7 @@
                                     </div>
                                 </div>
                                 <div class="owl-item active" style="width: 280px; margin-right: 10px;">
-                                    <div class="product-card"><span class="sale-box">- 20% </span>
+                                    <div class="product-card">
 
 
                                         <div class="product-card__inner">
@@ -734,7 +733,7 @@
                                     </div>
                                 </div>
                                 <div class="owl-item" style="width: 280px; margin-right: 10px;">
-                                    <div class="product-card"><span class="sale-box">- 20% </span>
+                                    <div class="product-card">
 
 
                                         <div class="product-card__inner">
@@ -765,7 +764,6 @@
 
                                                 <strong class="strong-sale">1.480.000₫</strong>
 
-                                                <span>1.850.000₫</span></div>
 
                                         </div>
                                         <form action="/cart/add" method="post" enctype="multipart/form-data"
@@ -784,7 +782,7 @@
                                     </div>
                                 </div>
                                 <div class="owl-item" style="width: 280px; margin-right: 10px;">
-                                    <div class="product-card"><span class="sale-box">- 20% </span>
+                                    <div class="product-card">
 
 
                                         <div class="product-card__inner">
@@ -810,7 +808,6 @@
 
                                                 <strong class="strong-sale">1.480.000₫</strong>
 
-                                                <span>1.850.000₫</span></div>
 
 
                                         </div>

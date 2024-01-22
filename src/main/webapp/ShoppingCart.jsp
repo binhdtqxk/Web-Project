@@ -120,8 +120,8 @@
                                                         </button>
                                                         <button class="button btn-proceed-checkout btn btn-large btn-block btn-danger btn-checkouts"
                                                                 title="Tiếp tục mua hàng" type="button"
-                                                        >Tiếp
-                                                            tục mua hàng
+                                                        ><a href="index.jsp" >Tiếp
+                                                            tục mua hàng</a>
                                                         </button>
                                                     </div>
                                                 </div>

@@ -17,12 +17,13 @@ public class DAORegister {
         try {
             conn = new DBContext().getConnection();
             System.out.println(conn);
-            ps = conn.prepareStatement("INSERT INTO users(`lastName`,`firstName`,`phoneNumber`,`email`,`password`) VALUES(?,?,?,?,?)");
+            ps = conn.prepareStatement("INSERT INTO users(`lastName`,`firstName`,`phoneNumber`,`email`,`password`,`role`) VALUES(?,?,?,?,?,?)");
             ps.setString(1, user.getLastName());
             ps.setString(2, user.getFirstName());
             ps.setString(3, user.getPhoneNumber());
             ps.setString(4, user.getEmail());
             ps.setString(5, user.getPassword());
+            ps.setInt(6, user.getRole());
 
             ps.executeUpdate();
             conn.close();
@@ -31,6 +32,19 @@ public class DAORegister {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+    public boolean checkPhone(String number) throws SQLException, ClassNotFoundException {
+        conn = new DBContext().getConnection();
+        ps = conn.prepareStatement("Select * from users where phoneNumber=?");
+        ps.setString(1,number);
+        rs = ps.executeQuery();
+        return rs.next();
+    }
+    public boolean checkEmail(String email) throws SQLException, ClassNotFoundException {
+        conn = new DBContext().getConnection();
+        ps = conn.prepareStatement("Select * from users where email=?");
+        ps.setString(1,email);
+        return rs.next();
     }
 
 

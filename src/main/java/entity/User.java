@@ -9,12 +9,22 @@ public class User {
     private String email;
     private String password;
 
+    private int role;
     public User(String lastName, String firstName, String phoneNumber, String email, String password) {
         this.lastName = lastName;
         this.firstName = firstName;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.password = password;
+    }
+
+    public User(String lastName, String firstName, String phoneNumber, String email, String password, int role) {
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.password = password;
+        this.role = role;
     }
 
     public User(String email, String password) {
@@ -64,6 +74,14 @@ public class User {
 
     public String getFullName() {
         return getFirstName() +" "+ getLastName();
+    }
+
+    public int getRole() {
+        return role;
+    }
+
+    public void setRole(int role) {
+        this.role = role;
     }
 
     @Override

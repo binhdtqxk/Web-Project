@@ -44,7 +44,7 @@
             <h5 class="subtitle">${i}</h5>
         </div>
     </c:if>
-    <form method="post" action="VerifyCodeForgot" id="customer_login" accept-charset="UTF-8"
+    <form method="post" action="VerifyCodeReg" id="customer_login" accept-charset="UTF-8"
           class="has-validation-callback"><input name="FormType" type="hidden" value="customer_login"><input
             name="utf8" type="hidden" value="true">
 

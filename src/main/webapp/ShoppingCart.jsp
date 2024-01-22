@@ -19,6 +19,7 @@
 <c:import url="header.jsp"/>
 <c:set var="listP" value="${sessionScope.listP}"/>
 <c:set var="mapP" value="${sessionScope.mapP}"/>
+<c:set var="priceSum" value="${sessionScope.priceSum}"/>
 <div class="map">
     <ul class="sub-map">
         <li><a href="index.jsp" title="Trang chủ" class="home">Trang chủ > </a></li>
@@ -56,13 +57,13 @@
                                                                     title="${i.nameOfShoe} ${i.typeOfShoe}"
                                                                     target="_blank"><img class="img-responsive"
                                                                                          src="${i.imgOfShoe}"
-                                                                                         alt="${i.nameOfShoe} ${i.typeOfShoe}"></a>
+                                                                                         alt="${i.nameOfShoe}"></a>
                                                             </p></div>
                                                             <div class="col-right col-xs-9">
                                                                 <div class="box-info-product"><p class="name"><a
                                                                         href=""
-                                                                        title="${i.nameOfShoe} ${i.typeOfShoe}"
-                                                                        target="_blank">${i.nameOfShoe} ${i.typeOfShoe}</a></p>
+                                                                        title="${i.nameOfShoe}"
+                                                                        target="_blank">${i.nameOfShoe}</a></p>
                                                                     <p class="seller-by hidden">39 / BROWN</p>
                                                                     <p class="action"><a href="javascript:;"
                                                                                          class="btn btn-link btn-item-delete remove-item-cart"
@@ -84,7 +85,7 @@
                                                                                    maxlength="12" min="1" disabled=""
                                                                                    class="form-control quantity-r2 quantity js-quantity-product input-text number-sidebar input_pop input_pop qtyItem102678026"
                                                                                    id="qtyItem102678026" name="Lines"
-                                                                                   size="4" value="${mapP.get(i.idOfShoe)}">
+                                                                                   size="4" value="${mapP.get(i.nameOfShoe)}">
                                                                             <button
                                                                                     class="reduced_pop items-count btn-minus btn btn-default bootstrap-touchspin-down"
                                                                                     type="button">–
@@ -102,11 +103,11 @@
                                                 <div id="right-affix">
                                                     <div class="each-row">
                                                         <div class="box-style fee"><p class="list-info-price"><span>Tạm tính: </span><strong
-                                                                class="totals_price price _text-right text_color_right1">3.010.000₫</strong>
+                                                                class="totals_price price _text-right text_color_right1">${priceSum}₫</strong>
                                                         </p></div>
                                                         <div class="box-style fee">
                                                             <div class="total2 clearfix"><span class="text-label">Thành tiền: </span>
-                                                                <div class="amount"><p><strong class="totals_price">3.010.000₫</strong>
+                                                                <div class="amount"><p><strong class="totals_price">${priceSum}₫</strong>
                                                                 </p></div>
                                                             </div>
                                                         </div>

@@ -28,7 +28,7 @@
                     <li><a itemprop="url" href="/new-arrivals" title="NEW ARRIVALS"><span
                             itemprop="title">NEW ARRIVALS</span></a><span><i class="ti-angle-right"></i></span></li>
 
-                    <li><strong><span itemprop="title">SIR BUTTERFLY LOAFER - LF16</span></strong>
+                    <li><strong><span itemprop="title">${i.nameOfShoe} ${i.typeOfShoe} - ${i.idOfShoe}</span></strong>
                     <li>
 
                 </ul>

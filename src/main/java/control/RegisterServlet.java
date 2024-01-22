@@ -46,11 +46,11 @@ public class RegisterServlet extends HttpServlet {
                 req.getRequestDispatcher("register.jsp").forward(req,resp);
             }else{
                 User user= new User(lastName,firstName,phone,email,service.EnCode.toSHA1(password),0);
-                req.setAttribute("user",user);
                 int code= Verification.createCode();
                 MailService.send(email,"Quen Mat Khau","Ma xac thuc cua ban la: "+code);
                 HttpSession session = req.getSession();
                 session.setAttribute("code",code);
+                session.setAttribute("user",user);
                 req.getRequestDispatcher("VerifyMail.jsp").forward(req,resp);
 
             }

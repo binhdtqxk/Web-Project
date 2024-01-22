@@ -20,7 +20,14 @@ import java.util.Map;
 public class AddProductServlet extends HttpServlet {
     List<Product> listP=new ArrayList<>();
     DAOProduct dao =new DAOProduct();
-    Map<Integer,Integer> numberSaving= new HashMap<>();
+    Map<String,Integer> numberSaving= new HashMap<>();
+
+    Map<Integer,String> sizeSaving= new HashMap<>();
+
+    Map<Integer,String> colorSaving= new HashMap<>();
+    int priceSum=0;
+
+    int numberOfProduct=0;
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doPost(req,resp);
@@ -40,13 +47,21 @@ public class AddProductServlet extends HttpServlet {
         try {
             p=dao.getProductById(id);
             p.setTypeOfShoe(" - "+p.getIdOfShoe()+" - "+size+" / "+color);
-            if(numberSaving.containsKey(p.getIdOfShoe())){
-                int currentNumber=numberSaving.get(p.getIdOfShoe());
-                numberSaving.put(p.getIdOfShoe(), currentNumber+number);
+            String newName=p.getNameOfShoe()+p.getTypeOfShoe();
+            p.setNameOfShoe(newName);
+            if(numberSaving.containsKey(newName)){
+                int currentNumber=numberSaving.get(p.getNameOfShoe());
+                numberSaving.put(p.getNameOfShoe(), currentNumber+number);
+                priceSum+=p.getPriceOfShoe();
+                numberOfProduct++;
             }else{
                 listP.add(p);
-                numberSaving.put(p.getIdOfShoe(),number);
+                numberSaving.put(p.getNameOfShoe(),number);
+                priceSum+=p.getPriceOfShoe()*numberSaving.get(p.getNameOfShoe());
+                numberOfProduct++;
             }
+            session.setAttribute("numberOfProduct",numberOfProduct);
+            session.setAttribute("priceSum",priceSum);
             session.setAttribute("listPr",listP);
             session.setAttribute("mapP",numberSaving);
             req.getRequestDispatcher("ShoppingCart.jsp").forward(req,resp);

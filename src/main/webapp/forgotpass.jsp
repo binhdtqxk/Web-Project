@@ -39,7 +39,7 @@
         <h5 class="subtitle">Bạn quên mật khẩu? Nhập địa chỉ email để lấy lại mật khẩu qua email.</h5>
     </div>
 
-    <form method="post" action="login" id="customer_login" accept-charset="UTF-8"
+    <form method="post" action="ForgotPass" id="customer_login" accept-charset="UTF-8"
           class="has-validation-callback"><input name="FormType" type="hidden" value="customer_login"><input
             name="utf8" type="hidden" value="true">
 

@@ -62,7 +62,7 @@
       </div>
       <div class="clearfix"></div>
       <p class="text-center">
-        <a href="forgotpass.jsp" class="btn-link-style" onclick="showRecoverPasswordForm();"
+        <a href="forgotpass.jsp" class="btn-link-style"
            title="Quên mật khẩu?">Quên mật khẩu?</a>
       </p>
       <div class="text-login text-center">

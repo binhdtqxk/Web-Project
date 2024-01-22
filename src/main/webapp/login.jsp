@@ -62,12 +62,12 @@
       </div>
       <div class="clearfix"></div>
       <p class="text-center">
-        <a href="#recover" class="btn-link-style" onclick="showRecoverPasswordForm();"
+        <a href="forgotpass.jsp" class="btn-link-style" onclick="showRecoverPasswordForm();"
            title="Quên mật khẩu?">Quên mật khẩu?</a>
       </p>
       <div class="text-login text-center">
         <p>
-          Bạn chưa có tài khoản. Đăng ký <a href="/account/register" title="Đăng ký">tại đây.</a>
+          Bạn chưa có tài khoản. Đăng ký <a href="register.jsp" title="Đăng ký">tại đây.</a>
         </p>
       </div>
     </div>

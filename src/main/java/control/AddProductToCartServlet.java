@@ -35,18 +35,20 @@ public class AddProductToCartServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    int errcode=0;
     HttpSession session=req.getSession();
     if(session.getAttribute("numberOfProduct")!=null){
         numberOfProduct= (int) session.getAttribute("numberOfProduct");
     }
-        if(session.getAttribute("priceSum")!=null){
+    if(session.getAttribute("priceSum")!=null){
             priceSum= (int) session.getAttribute("priceSum");
         }
-        if(session.getAttribute("listPr")!=null){
+    if(session.getAttribute("listPr")!=null){
             listP= (List<Product>) session.getAttribute("listPr");
         }
-        if(session.getAttribute("mapP")!=null){
+    if(session.getAttribute("mapP")!=null){
             numberSaving= (Map<String, Integer>) session.getAttribute("mapP");
+            errcode++;
         }
 
     Product p= new Product();
@@ -61,18 +63,25 @@ public class AddProductToCartServlet extends HttpServlet {
             p=dao.getProductById(id);
             p.setTypeOfShoe(" - "+p.getIdOfShoe()+" - "+size+" / "+color);
             String newName=p.getNameOfShoe()+p.getTypeOfShoe();
-            p.setNameOfShoe(newName);
-            if(numberSaving.containsKey(newName)){
-                int currentNumber=numberSaving.get(p.getNameOfShoe());
-                numberSaving.put(p.getNameOfShoe(), currentNumber+number);
-                priceSum+=p.getPriceOfShoe();
-                numberOfProduct++;
-            }else{
-                listP.add(p);
-                numberSaving.put(p.getNameOfShoe(),number);
-                priceSum+=p.getPriceOfShoe()*numberSaving.get(p.getNameOfShoe());
-                numberOfProduct++;
-            }
+                p.setNameOfShoe(newName);
+                if(numberSaving.containsKey(newName)){
+                    if(numberSaving.get(p.getNameOfShoe())!=0) {
+                        int currentNumber = numberSaving.get(p.getNameOfShoe());
+                        numberSaving.put(p.getNameOfShoe(), currentNumber + number);
+                        priceSum += p.getPriceOfShoe()*number;
+                        numberOfProduct+=number;
+                    }else{
+                        listP.add(p);
+                        numberSaving.put(p.getNameOfShoe(),number);
+                        priceSum+=p.getPriceOfShoe()*number;
+                        numberOfProduct+=number;
+                    }
+                }else{
+                    listP.add(p);
+                    numberSaving.put(p.getNameOfShoe(),number);
+                    priceSum+=p.getPriceOfShoe()*number;
+                    numberOfProduct+=number;
+                }
             session.setAttribute("numberOfProduct",numberOfProduct);
             session.setAttribute("priceSum",priceSum);
             session.setAttribute("listPr",listP);

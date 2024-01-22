@@ -44,6 +44,7 @@ public class DAORegister {
         conn = new DBContext().getConnection();
         ps = conn.prepareStatement("Select * from users where email=?");
         ps.setString(1,email);
+        rs = ps.executeQuery();
         return rs.next();
     }
 

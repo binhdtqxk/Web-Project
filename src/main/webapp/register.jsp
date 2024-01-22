@@ -45,7 +45,7 @@
                         <c:if test="${not empty i}">
                             <div class="errors">
                                 <ul>
-                                    <li>Email đã tồn tại.</li>
+                                    <li>${i}</li>
                                 </ul>
                             </div>
                         </c:if>

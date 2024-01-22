@@ -51,7 +51,7 @@
                                 <p><i class="fa fa-map-marker"></i>
                                 </p>
 
-                                <div class="margin-top-20"><a href="/account/addresses" class="btn btn-blues btn-full" title="Sổ địa chỉ"><i class="fa fa-book"></i> Sổ địa chỉ (0)</a></div>
+                                <div class="margin-top-20"><a href="ChangePass.jsp" class="btn btn-blues btn-full" title="Sổ địa chỉ"><i class="fa fa-book"></i> Đổi mật khẩu</a></div>
                             </div>
 
                         </div>

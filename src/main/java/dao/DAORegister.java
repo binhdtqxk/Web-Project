@@ -47,7 +47,24 @@ public class DAORegister {
         rs = ps.executeQuery();
         return rs.next();
     }
-
+    public boolean updatePass(String email, String password) throws SQLException, ClassNotFoundException {
+        int res=0;
+        conn = new DBContext().getConnection();
+        ps = conn.prepareStatement("update users  set password = ? where email=?");
+        ps.setString(1,password);
+        ps.setString(2,email);
+        res = ps.executeUpdate();
+        return (res>0);
+    }
+    public boolean checkPass(String email, String password) throws SQLException, ClassNotFoundException {
+        int res=0;
+        conn = new DBContext().getConnection();
+        ps = conn.prepareStatement("select * from users  where password = ? and email=?");
+        ps.setString(1,password);
+        ps.setString(2,email);
+        rs = ps.executeQuery();
+        return rs.next();
+    }
 
     public static void main(String[] args) {
 

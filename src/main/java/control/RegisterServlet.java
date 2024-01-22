@@ -47,11 +47,11 @@ public class RegisterServlet extends HttpServlet {
             }else{
                 User user= new User(lastName,firstName,phone,email,service.EnCode.toSHA1(password),0);
                 int code= Verification.createCode();
-                MailService.send(email,"Quen Mat Khau","Ma xac thuc cua ban la: "+code);
+                MailService.send(email,"Mã xác thực ","Ma xac thuc cua ban la: "+code);
                 HttpSession session = req.getSession();
                 session.setAttribute("code",code);
                 session.setAttribute("user",user);
-                req.getRequestDispatcher("VerifyMail.jsp").forward(req,resp);
+                req.getRequestDispatcher("VerifyMailRegister.jsp").forward(req,resp);
 
             }
 

@@ -46,7 +46,7 @@
                                     <li>
                                         <c:choose>
                                             <c:when test="${auth.getRole() == 1}">
-                                                <a href="adminProduct.jsp">Xin chào, ${auth.lastName}</a>
+                                                <a href="adminProductList">Xin chào, ${auth.lastName}</a>
                                             </c:when>
                                             <c:when test="${auth.getRole() == 0}">
                                                 <a href="profile.jsp">Xin chào, ${auth.lastName}</a>

@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(value = "/VerifyCodeForgot")
-public class VerifyCodeFG extends HttpServlet {
+@WebServlet(value = "/VerifyCodeReg")
+public class VerifyCodeReg extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doPost(req,resp);
@@ -22,31 +22,18 @@ public class VerifyCodeFG extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session= req.getSession();
         User user = (User) session.getAttribute("user");
-        if (user == null) {
             String error = "";
             int codeIn = Integer.parseInt(req.getParameter("code"));
             int codeReal = (int) session.getAttribute("code");
             if (codeIn == codeReal) {
-                resp.sendRedirect("ChangePass.jsp");
-            } else {
-                error = "Bạn đã nhập sai mã,vui lòng nhập lại";
-                req.setAttribute("error", error);
-                req.getRequestDispatcher("VerifyMail.jsp").forward(req, resp);
-            }
-        }    else{
-            DAORegister dao= new DAORegister();
-            dao.addAccount(user);
-            String error = "";
-            int codeIn = Integer.parseInt(req.getParameter("code"));
-            int codeReal = (int) session.getAttribute("code");
-            if (codeIn == codeReal) {
+                DAORegister dao= new DAORegister();
+                dao.addAccount(user);
                 resp.sendRedirect("login.jsp");
             } else {
                 error = "Bạn đã nhập sai mã,vui lòng nhập lại";
                 req.setAttribute("error", error);
                 req.setAttribute("user",user);
-                req.getRequestDispatcher("VerifyMail.jsp").forward(req, resp);
-            }
+                req.getRequestDispatcher("VerifyMailRegister.jsp").forward(req, resp);
         }
     }
 

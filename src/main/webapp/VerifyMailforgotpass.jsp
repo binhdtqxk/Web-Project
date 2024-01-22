@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<%@page isELIgnored="false" %>
+<%@ page isELIgnored="false"%>
 <html>
 
 <head>
@@ -17,19 +17,18 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đặt lại mật khẩu</title>
+    <title>Nhập mã xác minh</title>
 </head>
 
 <body>
 <c:import url="header.jsp"/>
-
+<c:set value="${requestScope.error}" var="i"/>
 <!-- Map web -->
-<c:set value="${requestScope.error}" var="error"/>
 <div class="map">
     <ul class="sub-map">
         <li><a href="index.jsp" title="Trang chủ" class="home">Trang chủ > </a></li>
         <li>
-            <p class="cur-position">Đặt lại mật khẩu</p>
+            <p class="cur-position">Nhập mã xác minh</p>
         </li>
     </ul>
 </div>
@@ -37,30 +36,26 @@
 <!-- Login -->
 <div id="login">
     <div class="text-center margin-bottom-30">
-        <h1 class="title-head">Đặt lại mật khẩu</h1>
-        <h5 class="subtitle">Bạn quên mật khẩu? Nhập địa chỉ email để lấy lại mật khẩu qua email.</h5>
+        <h1 class="title-head">Nhập mã xác minh</h1>
+        <h5 class="subtitle">Nhập mã xác minh email để xác thực tài khoản.</h5>
     </div>
-
-    <c:if test="${not empty error}">
+    <c:if test="${not empty i}">
         <div>
-            <h5>${error}</h5>
+            <h5 class="subtitle">${i}</h5>
         </div>
     </c:if>
-
-    <form method="post" action="ForgotPass" id="customer_login" accept-charset="UTF-8"
+    <form method="post" action="ForgotToChange" id="customer_login" accept-charset="UTF-8"
           class="has-validation-callback"><input name="FormType" type="hidden" value="customer_login"><input
             name="utf8" type="hidden" value="true">
 
         <div class="form-signup clearfix">
 
-            <label for="email-login">Email<span class="required">*</span></label>
-            <input autocomplete="off" placeholder="Nhập Địa chỉ Email" type="email" id="email-login"
-                   class="form-control" value="" name="email" required=""
-                   data-validation="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$"
-                   data-validation-error-msg="Email sai định dạng">
+            <label for="email-login">Mã xác minh<span class="required">*</span></label>
+            <input autocomplete="off" placeholder="Nhập mã xác minh" type="text" id="email-login"
+                   class="form-control" value="" name="code" required=""    >
 
             <div class="pull-xs-left text-center" style="margin-top: 15px;">
-                <button class="btn btn-style btn-blues" type="submit" value="Lấy lại mật khẩu">Lấy lại mật khẩu</button>
+                <button class="btn btn-style btn-blues" type="submit" value="Xác nhận">Xác nhận</button>
             </div>
             <div class="clearfix"></div>
 
@@ -78,3 +73,4 @@
 </body>
 
 </html>
+

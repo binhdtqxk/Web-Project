@@ -20,6 +20,7 @@
 <c:set var="listP" value="${sessionScope.listP}"/>
 <c:set var="mapP" value="${sessionScope.mapP}"/>
 <c:set var="priceSum" value="${sessionScope.priceSum}"/>
+<c:set var="numberOfProduct" value="${sessionScope.numberOfProduct}"/>
 <div class="map">
     <ul class="sub-map">
         <li><a href="index.jsp" title="Trang chủ" class="home">Trang chủ > </a></li>
@@ -38,7 +39,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <h1 class="lbl-shopping-cart lbl-shopping-cart-gio-hang">Giỏ hàng <span>(<span
-                                            class="count_item_pr">2</span> sản phẩm)</span></h1>
+                                            class="count_item_pr">${numberOfProduct}</span> sản phẩm)</span></h1>
                                 </div>
                             </div>
                             <div class="row">
@@ -54,7 +55,7 @@
                                                              style="display: inline-flex; width: 100%;">
                                                             <div class="col-xs-3 img-thumnail-custom"><p class="image"><a
                                                                     href=""
-                                                                    title="${i.nameOfShoe} ${i.typeOfShoe}"
+                                                                    title="${i.nameOfShoe}"
                                                                     target="_blank"><img class="img-responsive"
                                                                                          src="${i.imgOfShoe}"
                                                                                          alt="${i.nameOfShoe}"></a>
@@ -65,7 +66,7 @@
                                                                         title="${i.nameOfShoe}"
                                                                         target="_blank">${i.nameOfShoe}</a></p>
                                                                     <p class="seller-by hidden">39 / BROWN</p>
-                                                                    <p class="action"><a href="javascript:;"
+                                                                    <p class="action"><a href="DeleteOnCart?name=${i.nameOfShoe}"
                                                                                          class="btn btn-link btn-item-delete remove-item-cart"
                                                                                          data-id="102678026"
                                                                                          title="Xóa">Xóa</a></p></div>

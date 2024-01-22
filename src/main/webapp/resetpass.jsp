@@ -16,7 +16,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Đăng nhập tài khoản</title>
+  <title>Đổi mật khẩu</title>
 </head>
 
 <body>
@@ -28,7 +28,7 @@
   <ul class="sub-map">
     <li><a href="index.jsp" title="Trang chủ" class="home">Trang chủ > </a></li>
     <li>
-      <p class="cur-position">Đăng nhập tài khoản</p>
+      <p class="cur-position">Đổi mật khẩu</p>
     </li>
   </ul>
 </div>
@@ -36,7 +36,7 @@
 <!-- Login -->
 <div id="login">
   <div class="text-center margin-bottom-30">
-    <h1 class="title-head">Dat lai mat khau</h1>
+    <h1 class="title-head">Đổi mật khẩu</h1>
   </div>
 
   <form method="post" action="login" id="customer_login" accept-charset="UTF-8"
